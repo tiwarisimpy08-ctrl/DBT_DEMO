@@ -14,7 +14,7 @@ DAYNAME(TO_TIMESTAMP(STARTED_AT)) as DAY_STARTED_AT,
 {{get_season('STARTED_AT')}} as STATION_OF_YEAR
 
 
-from {{ source('demo', 'bike') }}
+from {{ ref('stg_bike') }}
 where STARTED_AT != 'started_at'
 )
 
